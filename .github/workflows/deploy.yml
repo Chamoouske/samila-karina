@@ -25,11 +25,11 @@ jobs:
         run: npm install
 
       - name: Build Angular App
-        run: ng build --output-path docs --base-href /samila-karina/
+        run: ng build --base-href /samila-karina/
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+          publish_dir: ./dist/samila-karina/browser
           publish_branch: gh-pages
           force_orphan: true
